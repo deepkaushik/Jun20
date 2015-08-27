@@ -1,12 +1,12 @@
 package com.example.some.jun20;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-
 
 
 public class MainActivity extends AppCompatActivity {
@@ -16,10 +16,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button button = (Button)findViewById(R.id.button);
-        MyOnClickListener myOnClickListener = new MyOnClickListener();
-        button.setOnClickListener(myOnClickListener);
+        Button button = (Button) findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startStarWars();
+            }
+        });
     }
+
+    private void startStarWars() {
+        Intent intent = new Intent(this, Game.class);
+        startActivity(intent);
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -44,14 +54,8 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 
-//A private class.
 
-class MyOnClickListener implements View.OnClickListener {
 
-    @Override
-    public void onClick(View v) {
-        Button button = (Button)v;  //downcast
-        button.setText("Thanks for pressing this button.");
-    }
 
-}
+
+
