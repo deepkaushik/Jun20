@@ -20,12 +20,12 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startStarWars();
+                game();
             }
         });
     }
 
-    private void startStarWars() {
+    private void game() {
         Intent intent = new Intent(this, Game.class);
         startActivity(intent);
     }
