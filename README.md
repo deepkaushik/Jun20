@@ -6,3 +6,4 @@ App is Monty Hall puzzle. App showing use of:
 3. OnClickListener
 4. Switch Statement
 5. Intent
+6. Display Toast
